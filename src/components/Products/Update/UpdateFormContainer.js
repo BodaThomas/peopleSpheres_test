@@ -18,7 +18,10 @@ class UpdateFormContainer extends Component {
             <>
                 <Link to='/'>Home</Link>
                 <ProductForm
-                    onSave={(data) => {return}}
+                    onSave={(data) => {
+                        dispatch(updateProductForm(product.id, data));
+                        return;
+                    }}
                     product={product}
                     categories={categories}
                 />

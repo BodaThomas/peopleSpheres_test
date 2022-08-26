@@ -13,7 +13,10 @@ class AddFormContainer extends Component {
             <>
                 <Link to='/'>Home</Link>
                 <ProductForm
-                    onSave={(data) => {return;}}
+                    onSave={(data) => {
+                        dispatch(createProductForm(data));
+                        return;
+                    }}
                     categories={categories}
                 />
             </>
