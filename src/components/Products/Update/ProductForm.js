@@ -62,7 +62,10 @@ const ProductForm = (props) => {
                     name="rating"
                     id="rating"
                     value={rating}
-                    onChange={({target}) => setRating(target.value)}
+                    onChange={({target}) => {
+                        setRating(target.value)
+                        target.value > 8 ? setFeatured(true) : setFeatured(false)
+                    }}
                 >
                     {repeat(11).map((v) => (
                         <option key={v} value={v}>{v}</option>
